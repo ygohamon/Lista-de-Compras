@@ -1,0 +1,166 @@
+* {
+  font-size: 36px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: #6554bb;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.app-background {
+  background-color: #6554bb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.main-container {
+  background-color: #f5f6fa;
+  width: 500px;
+  height: min-content;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 10px 10px 26px 0px rgba(0, 0, 0, 0.35);
+}
+
+.title {
+  text-align: center;
+}
+
+.add-item-box {
+  background: #6554bb;
+  color: #c3bbe9;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.add-item-box svg {
+  margin: 5px;
+}
+
+.add-item-input {
+  box-sizing: border-box;
+  border: none;
+  background: transparent;
+  color: #c3bbe9;
+  width: 100%;
+  height: 30px;
+}
+
+
+input::placeholder {
+  color: #c3bbe9;
+}
+input:focus {
+  outline: 0;
+}
+
+.item-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0 20px 0;
+  border-bottom: 1px #6554bb solid;
+}
+
+.item-name {
+  cursor: pointer;
+}
+
+.item-name svg {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.valor-item-box {
+  display: flex;
+  background: #6554bb;
+  border-radius: 50px;
+  color: #bab1e9;
+  display: inline;
+  align-items: flex-end;
+  padding: 5px;
+  justify-content: right;
+}
+
+.valor-item-box svg{
+  margin: 5px;
+}
+
+.valor-item-input {
+  border: 1px solid #6554bb;
+  background: #6554bb;
+  border-radius: 50px;
+  color: #c3bbe9;
+  min-width: 70px;
+  width: 100px;
+  height: 40px;
+}
+
+.item-action-buttons {
+  /* width: 30%; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.remove-button {
+  color: #c3bbe9;
+  background-color: red;
+}
+
+.total {
+  float: right;
+  padding: 10px;
+}
+
+.valor {
+  float: right;
+  padding: 10px;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  border: 1px solid #6554bb;
+  background: #6554bb;
+  border-radius: 50px;
+  font-size: 12px;
+  color: #c3bbe9;
+  min-width: 70px;
+  justify-content: space-between;
+}
+
+button {
+  background: transparent;
+  border: none;
+  margin: 3px;
+  color: #c3bbe9;
+}
+button:focus {
+  outline: 0;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.completed {
+  text-decoration: line-through;
+}
