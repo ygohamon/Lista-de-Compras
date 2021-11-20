@@ -74,6 +74,13 @@ const App = () => {
 
 		setTotalItemCount(totalItemCount);
 	};
+
+	const handleChangeValueItem = (index, value) => {
+		const _items = [...items];
+		_items[index].valor = value;
+		setItems(_items);
+		
+	}
 	
 
 	var total = items.reduce(getTotal, 0);
@@ -90,7 +97,7 @@ const App = () => {
 				</div>
 				<div className='item-list'>
 					{items.map((item, index) => (
-						<div className='item-container'>
+						<div key={index} className='item-container'>
 							<div className='item-name' onClick={() => toggleComplete(index)}>
 								{item.isSelected ? (
 									<React.Fragment>
@@ -107,7 +114,7 @@ const App = () => {
 
 							<div className='quantity'>
 							<div className='valor-item-box'>
-							R$ <input className='valor-item-input' placeholder='0,00' value={item.valor} onBlur={item.valor}/>
+							R$ <input className='valor-item-input' placeholder='0,00' value={item.valor} onChange={(event) => { handleChangeValueItem(index, event.currentTarget.value) }}/>
 							</div>
 								<button>
 									<FontAwesomeIcon icon={faChevronLeft} onClick={() => handleQuantityDecrease(index)} />
