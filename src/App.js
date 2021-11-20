@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+//import { View, StyleSheet, Button, Alert } from "react-native";
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faChevronLeft, faCircle, faCheckCircle, faPlus } from '@fortawesome/free-solid-svg-icons';
@@ -6,40 +7,31 @@ import { faChevronRight, faChevronLeft, faCircle, faCheckCircle, faPlus } from '
 const App = () => {
 	// HINT: each "item" in our list names a name,
 	// a boolean to tell if its been completed, and a quantity
-	const [items, setItems] = useState([
-		{itemName:'caneta', valor:2.30, quantity:3}, 
-		{itemName:'caderno', valor:13.40, quantity:2}, 
-		{itemName:'borracha', valor:1.2, quantity:5}
-	]);
-
-	const [inputValue, setInputValue] = useState('');
+	const [items, setItems] = useState([]);
+	const [inputValue, setInputValue] = useState();
 	const [totalItemCount, setTotalItemCount] = useState(0);
-	const [valor, setValor] = useState(0);
-
+	
 	const handleAdd = () => {
-		const newItem = {
-			itemName: inputValue,
-			quantity: 1,
-			valor: 0.00,
-			isSelected: false,
-		};
 
-		const newItems = [...items, newItem];
+		if(inputValue != null ){
 
-		setItems(newItems);
-		setInputValue('');
-		calculateTotal();
+			const newItem = {
+				itemName: inputValue,
+				quantity: 1,
+				valor: null,
+				isSelected: false,
+			};
+
+			const newItems = [...items, newItem];
+			
+			setItems(newItems);
+			setInputValue('');
+			calculateTotal();
+		}else{
+
+			alert("O campo precisa de no minimo 3 caracteres para serem inseridos!!!")
+		}
 	};
-
-	const handleEdit = (index) => {
-		const newItems = [...items];
-
-		newItems[index].valor = valor;
-
-		setItems(newItems);
-		calculateTotal();
-	};
-
 
 	const handleQuantityIncrease = (index) => {
 		const newItems = [...items];
@@ -81,7 +73,6 @@ const App = () => {
 		setItems(_items);
 		
 	}
-	
 
 	var total = items.reduce(getTotal, 0);
 	function getTotal(total, item) {
