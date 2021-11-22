@@ -13,11 +13,9 @@ const App = () => {
 	
 	const handleAdd = () => {
 
-		if(inputValue != null ){
-
 			const newItem = {
 				itemName: inputValue,
-				quantity: 1,
+				quantity: 0,
 				valor: null,
 				isSelected: false,
 			};
@@ -27,12 +25,9 @@ const App = () => {
 			setItems(newItems);
 			setInputValue('');
 			calculateTotal();
-		}else{
-
-			alert("O campo precisa de no minimo 3 caracteres para serem inseridos!!!")
-		}
+		
 	};
-
+	//required name=nome
 	const handleQuantityIncrease = (index) => {
 		const newItems = [...items];
 
